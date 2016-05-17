@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="assets/ico/favicon.ico">
+		<title>AXEON MERCADO PUBLICO</title>
+		<!-- Bootstrap core CSS -->
+		<link href="assets/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+		<link href="assets/css/style.css" rel="stylesheet">
+		<link href="assets/css/font-awesome.min.css" rel="stylesheet">
+		<link href="assets/js/fancybox/jquery.fancybox.css" rel="stylesheet" />
+		<!-- Just for debugging purposes. Don't actually copy this line! -->
+		<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<style type="text/css">
+			.loader {
+			position: fixed;
+			left: 0px;
+			top: 0px;
+			width: 100%;
+			height: 100%;
+			z-index: 9999;
+			background: url('images/embedi.png') 50% 50% no-repeat rgb(249,249,249);
+			}
+		</style>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(window).load(function() {
+			  $(".loader").fadeOut("slow");
+			})
+		</script>
+	</head>
+	<body data-spy="scroll" data-offset="0" data-target="#theMenu">
+    <section id="home" name="home"></section>
+		<div id="headerwrap">
+			<div class="container">
+				<div class="row">
+    		<!-- Modal -->
+    			<div class="modal-dialog">
+    				<form role="form"  action="data/switch.php" method="post">
+    					<div class="modal-content">
+    						<div class="modal-body" style="background-image: url('assets/img/back.jpg'); color: wheat;">
+                  <h1>AEXON</h1>
+      						<h2 class="sub">Felicidades!<br>Ya puedes usar el servicio</h2>
+                  <img src="http://vignette1.wikia.nocookie.net/daftpunk/images/2/2a/Check.png/revision/latest?cb=20140708054958"><br>
+      						<span class="sub2">Ingrese a la <a href="./">Pagina Principal</a> para entrar a la paltaforma</span><br>
+    						</div>
+    					</div>
+    				</form>
+    				<!-- /.modal-content -->
+    			</div>
+    			<!-- /.modal-dialog -->
+    		</div>
+      </div>
+    </div>
+		<!-- /.modal --><!-- Bootstrap core JavaScript
+			================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="assets/js/classie.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/smoothscroll.js"></script>
+		<script src="assets/js/jquery.stellar.min.js"></script>
+		<script src="assets/js/fancybox/jquery.fancybox.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script type="text/javascript">
+			$("#regUser").submit(function(){
+			  var modo 				= $("#tipo").val();
+			  var nombre 			= $("#nombre").val();
+			  if(password==passtwo || password.lenght <= 6){
+			    $.ajax({
+			     url: 'data/switch.php',
+			     type: 'POST',
+			     data: {
+			       'hdnOperation': "regUsuario",
+			       'token': 'dGUgYXRyYXBl'
+			     },
+			     dataType: 'json',
+			     success: function(data){
+			       if(data.Mensaje=="success"){
+			         var coment = data.Comentario;
+			         var datos = new Array(nombre,apellido,empresa,sector,cargo,rut,email,modo);
+			         console.log(coment);
+			         console.log(datos);
+			         window.location.href = "pago.php?axeon=" + coment + "&Token=dGUgYXRyYXBl&object=" + datos;
+			       }else {
+			        alert(data.Mensaje);
+			       }
+			     }
+			   });
+			 }
+			});
+		</script>
+	</body>
+</html>

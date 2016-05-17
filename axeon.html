@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="assets/ico/favicon.ico">
+		<title>AXEON MERCADO PUBLICO</title>
+		<!-- Bootstrap core CSS -->
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+		<link href="assets/css/font-awesome.min.css" rel="stylesheet">
+		<link href="assets/js/fancybox/jquery.fancybox.css" rel="stylesheet" />
+		<!-- Just for debugging purposes. Don't actually copy this line! -->
+		<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<style type="text/css">
+			.loader {
+			position: fixed;
+			left: 0px;
+			top: 0px;
+			width: 100%;
+			height: 100%;
+			z-index: 9999;
+			background: url('images/embedi.png') 50% 50% no-repeat rgb(249,249,249);
+			}
+		</style>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(window).load(function() {
+			  $(".loader").fadeOut("slow");
+			})
+		</script>
+	</head>
+	<body data-spy="scroll" data-offset="0" data-target="#theMenu" style="background-image: url('assets/img/back.jpg');background-size: cover;">
+			<div class="modal-dialog">
+				<form role="form" id="regUser" method="post">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title" id="myModalLabel">Registro <span style="color:#078282;">AXEON</span></h4>
+						</div>
+						<div class="modal-body">
+              <div class="col-lg-6" style="padding: 0; padding-right:1em">
+                <div class="form-group">
+                  <input class="form-control" placeholder="Nombres" type="text" name="nombre" id="nombre" required="">
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <input class="form-control" placeholder="Apellidos" type="text" name="apellidos" id="apellidos" required="">
+                </div>
+              </div>
+              <div class="col-lg-6" style="padding: 0; padding-right:1em">
+                <div class="form-group">
+                  <input class="form-control" placeholder="Empresa" type="text" name="empresa" id="empresa" required="">
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <input class="form-control" placeholder="Sector" type="text" name="sector" id="sector" required="">
+                </div>
+              </div>
+              <div class="col-lg-6" style="padding: 0; padding-right:1em">
+                <div class="form-group">
+                  <input class="form-control" placeholder="Cargo" type="text" name="cargo" id="cargo" required="">
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <input class="form-control" placeholder="Rut Natural o Juridica" type="text" name="rut" id="rut" required="">
+                </div>
+              </div>
+							<div class="form-group">
+								<input class="form-control" type="email" name="email" id="emailr" placeholder="Email" required="">
+							</div>
+							<div class="form-group">
+								<input class="form-control" type="email" name="email" id="email" placeholder="Confirme Email" required="">
+							</div>
+              <div class="form-group">
+								<input class="form-control" placeholder="Contraseña de ingreso" type="password" name="password" id="password" pattern=".{6,20}" required title="Minimo 6 Caracteres">
+							</div>
+							<div class="form-group">
+								<input class="form-control" placeholder="Confirme Contraseña" type="password" name="passtwo" id="passtwo" pattern=".{6,20}" required title="Minimo 6 Caracteres">
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-success">Registrar Ahora!</button>
+						</div>
+					</div>
+				</form>
+				<!-- /.modal-content -->
+			</div>
+			<div class="modal fade" id="modalInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+
+						<div class="alert alert-warning" id="informe">
+								<strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+						</div>
+					<!-- /.modal-content -->
+				</div>
+				<!-- /.modal-dialog -->
+			</div>
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="assets/js/classie.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/smoothscroll.js"></script>
+		<script src="assets/js/jquery.stellar.min.js"></script>
+		<script src="assets/js/fancybox/jquery.fancybox.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script>
+		$("#regUser").submit(function(){event.preventDefault();$("form").serializeArray()[6].value==$("form").serializeArray()[7].value&&$("form").serializeArray()[8].value==$("form").serializeArray()[9].value?$.ajax({url:"data/switch.php",type:"POST",data:{hdnOperation:"regist7",nombre:$("form").serializeArray()[0].value,apellido:$("form").serializeArray()[1].value,empresa:$("form").serializeArray()[2].value,sector:$("form").serializeArray()[3].value,cargo:$("form").serializeArray()[4].value,rut:$("form").serializeArray()[5].value,
+email:$("form").serializeArray()[6].value,password:$("form").serializeArray()[8].value,token:"dGUgYXRyYXBl"},dataType:"json",success:function(a){console.log(a)}}):($("#informe").html("<strong>Importante!</strong> Tanto Correos como contrase\u00f1as deben coincidir"),$("#modalInfo").modal("show"))});
+		</script>
+	</body>
+</html>
